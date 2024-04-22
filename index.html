@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetic Retinopathy Prediction</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/application/static/styles.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="/application/static/sahyadri.png" class="logo" />
+      <ul>
+        <li><a href="/application/templates/index.html">Home</a></li>
+        <li><a href="/application/templates/aboutus.html">About us</a></li>
+        <li><a href="/application/static/cnn manual .pdf" target="_blank">project report</a></li>
+      </ul>
+    </div>
+    <div class="container mt-5">
+      <h1>Eye disease Prediction</h1>
+      <form action="/predict" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <input
+            type="file"
+            class="form-control-file"
+            name="image"
+            accept="image/*"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </form>
+      {% if prediction_text %}
+      <div class="mt-4">
+        <h2>Prediction:</h2>
+        <p>{{ prediction_text }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
