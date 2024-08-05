@@ -1,1 +1,3 @@
 # Eye-disease-detection-using-python
+
+coudn't upload the trained model as it is about 4Gb in size.......
